@@ -1,0 +1,15 @@
+"Josefin Sans", sans-serif
+
+1) gaps :-
+-> gaps should be consistent across different section of the page
+-> both vertical and horizontal
+-> it is goood idea to have 2 divs just wrapping the entire page . (media queries)
+
+2) colors - do not use many colors on the page, 1-3 colors are enough for standard input and other components
+
+3) use a font that macthes with the theme / emotion you want to convey for your site. if this is difficult use a standard font like 
+   roboto, seoge ui, monsterrat, verdana, lato etc
+   -> do nt use more than two or three fonts on the website.
+   -> standardize font sizes for headings and paragraph text.
+ 
+   
