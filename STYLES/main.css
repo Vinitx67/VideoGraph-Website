@@ -542,57 +542,218 @@ ul {
 }
 
 
+/* IMAGE GALLERY */
 
-
-
-
-
-
-
-
-
-
-
-.set-bg {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+/* Main container styling */
+.work {
+    background-color: var(--primary);
+    padding: 20px;
 }
 
-.workimages {
-    height: 643px;
+/* Grid container for the masonry layout */
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* 6 columns */
+    grid-gap: 10px;
     position: relative;
+}
+
+/* Common item styling */
+.work-item {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* For images covering 2 columns and 1 row */
+.wide-item {
+    grid-column: span 2;
+    grid-row: span 1;
+    height: 310px;
+}
+
+/* For the large image covering 2 columns and 2 rows */
+.large-item {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 630px;
+}
+
+/* For regular small images covering 1 column and 1 row */
+.small-item {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 310px;
+}
+
+/* Utility class to set the background */
+.set-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .work-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        /* Switch to 4 columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .work-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        /* Switch to 2 columns */
+    }
+
+    .wide-item {
+        grid-column: span 2;
+    }
+
+    .large-item {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-gallery {
+        grid-template-columns: 1fr;
+        /* Stack all items in 1 column */
+    }
+
+    .work-item {
+        grid-column: span 1;
+    }
+
+    .large-item {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: auto;
+    }
+}
+
+
+/* COUNTER */
+
+.counter {
+    background: #100028;
+    height: 840px;
+    padding-top: 380px;
+    overflow: hidden;
+}
+
+.counter-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.counter-content {
+    padding: 0px 50px;
+}
+
+.counter-row {
     display: flex;
     flex-wrap: wrap;
-
+    margin-right: -15px;
+    margin-left: -15px;
 }
 
-.work-1 {
-    width: calc(33.33% - 10px);
-    height: 311px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-
+.col-lg-3 .col-md-6 .col-sm-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px
 }
 
-.work-2 {
-    height: 311px;
-    width: calc(16.67% - 10px);
-    margin-right: 10px;
-    margin-bottom: 10px;
+.counter-item {
+    background: #1a083d;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 255px;
+    width: 255px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
-.work-3 {
-    width: calc(16.67% - 10px);
-    height: 311px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-
+.counter-item-txt {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
-.work-4 {
-    height: 633px;
-    width: calc(33.33% - 10px);
-    margin-right: 10px;
-    margin-bottom: 10px;
+.counter-img {
+    max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.counter-item-txt h2 {
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 18px;
+    font-family: "Play", sans-serif;
+}
+
+.counter-item-txt p {
+    color: #ffffff;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    line-height: 26px;
+    margin: 0 0 15px 0;
+}
+
+
+.counter-item.second-item:before {
+    left: -316px;
+    bottom: -65px;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: none;
+    border-top: none;
+}
+
+.counter-item::before {
+    position: absolute;
+    left: -1px;
+    bottom: -2px;
+    height: 636px;
+    width: 636px;
+    border-left: 1px solid #333333;
+    border-top: 1px solid #333333;
+    content: "";
+    z-index: -1;
+}
+
+.counter-item .third-item:before {
+    left: -65px;
+    bottom: -317px;
+}
+
+.counter-item.four-item:before {
+    left: -380px;
+    bottom: -380px;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: none;
+    border-top: none;
 }
